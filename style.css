@@ -1,0 +1,95 @@
+:root{
+  --green-600:#197a3a;
+  --green-500:#1e9a4d;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --max-width:1100px;
+  --radius:8px;
+  --shadow: 0 6px 18px rgba(7,10,11,0.06);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#0b1220}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+/* Header / banner */
+.site-header{
+  background: linear-gradient(180deg, var(--green-600), var(--green-500));
+  color:#fff;
+  box-shadow: var(--shadow);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px 0;
+}
+.brand{
+  font-weight:700;
+  font-size:1.125rem;
+  letter-spacing:0.2px;
+}
+
+/* Nav */
+.main-nav{display:flex;align-items:center}
+.nav-item{position:relative}
+.nav-button{
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.12);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .15s, transform .06s;
+}
+.nav-button:hover{background:rgba(255,255,255,0.18)}
+.nav-button:active{transform:translateY(1px)}
+
+/* Dropdown */
+.dropdown{
+  position:absolute;
+  right:0;
+  top:calc(100% + 10px);
+  min-width:160px;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(11,17,23,0.08);
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:opacity .18s, transform .18s;
+}
+.dropdown.open{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+.dropdown a{
+  display:block;
+  padding:10px 14px;
+  color:#0b1220;
+  text-decoration:none;
+  font-weight:600;
+  border-bottom:1px solid #f1f5f9;
+}
+.dropdown a:last-child{border-bottom:0}
+.dropdown a:hover{background:#f8fafc}
+
+/* Main content */
+.content{padding:36px 0}
+.content h2{margin-top:0;color:var(--green-600)}
+.content section{margin-bottom:28px;background:#fff;border-radius:8px;padding:18px;box-shadow:var(--shadow)}
+
+/* Footer */
+.site-footer{padding:20px 0;color:var(--muted);text-align:center;font-size:.875rem}
+
+/* Responsive */
+@media (max-width:700px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .dropdown{right:unset;left:0}
+}

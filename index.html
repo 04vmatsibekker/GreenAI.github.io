@@ -1,11 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Green Air Pi</title>
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GreenAI Institute RPI</title>
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">GreenAI Institute RPI</div>
+        <nav class="main-nav">
+          <div class="nav-item">
+            <button class="nav-button" aria-haspopup="true" aria-expanded="false">Pages ▾</button>
+            <div class="dropdown" role="menu">
+              <a href="#mission">Mission</a>
+              <a href="#goals">Goals</a>
+              <a href="#whitepaper">Whitepaper</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <h1>Welcome to Green Air Pi</h1>
-  <p>Air quality monitoring using Raspberry Pi.</p>
-</body>
+    <main class="container content">
+      <section id="mission">
+        <h2>Mission</h2>
+        <p>Our mission content goes here.</p>
+      </section>
+
+      <section id="goals">
+        <h2>Goals</h2>
+        <p>Our goals content goes here.</p>
+      </section>
+
+      <section id="whitepaper">
+        <h2>Whitepaper</h2>
+        <p>Link or summary of the whitepaper goes here.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <small>© GreenAI Institute RPI</small>
+    </footer>
+
+    <script>
+      // Simple dropdown toggle with basic accessibility
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.nav-button');
+        if (!btn) {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+          document.querySelectorAll('.nav-button').forEach(b => b.setAttribute('aria-expanded','false'));
+          return;
+        }
+        var dd = btn.parentElement.querySelector('.dropdown');
+        var isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    </script>
+  </body>
 </html>
